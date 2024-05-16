@@ -1,0 +1,7 @@
+<resources>
+    <string name='app_name'>Lab1</string>
+    <string name='android'>Android</string>
+    <string name='PHP'>PHP</string>
+    <string name='SQL'>SQL</string>
+    <string name='PYTHON'>PYTHON</string>
+</resources>

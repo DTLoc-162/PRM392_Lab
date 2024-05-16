@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    style="?android:attr/buttonBarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/yellow"
+        android:text="@string/android"
+        android:textColor="@color/red"
+        android:textSize="@dimen/textSize"/>
+
+    <TextView
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/blue"
+        android:text="@string/PHP"
+        android:textColor="@color/red"
+        android:textSize="@dimen/textSize"/>
+
+    <TextView
+        android:layout_weight="4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/green"
+        android:text="@string/SQL"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/textSize"/>
+    <TextView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/orange"
+        android:text="@string/PYTHON"
+        android:textColor="@color/aqua"
+        android:textSize="@dimen/textSize"/>
+</LinearLayout>
