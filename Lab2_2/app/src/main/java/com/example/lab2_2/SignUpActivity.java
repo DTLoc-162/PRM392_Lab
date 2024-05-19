@@ -18,9 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText etUsername;
-    private EditText etPassword;
-    private EditText etConfirmPassword;
+    private EditText etUsername, etPassword, etConfirmPassword;
     private TextView tvAlreadyAccount;
     private Button btnSignUp;
 
