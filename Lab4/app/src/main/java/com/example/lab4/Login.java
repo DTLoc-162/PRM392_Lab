@@ -15,13 +15,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class Login extends AppCompatActivity {
 
     private EditText etUsername, etPassword;
     private Button btnSignIn;
-    private final String REQUIRE = "Require";
-    private static final String VALID_USERNAME = "thiemloc";
-    private static final String VALID_PASSWORD = "123456";
+    private final String REQUIRE = "REQUIRE";
+    private final String usname = "thiemloc";
+    private final String password = "123456";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,46 +37,36 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         etPassword = findViewById(R.id.etPassword);
 
         btnSignIn = findViewById(R.id.btnSignIn);
-        btnSignIn.setOnClickListener(this);
+        btnSignIn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                signIn();
+            }
+        });
 
     }
     private boolean checkInput() {
-        String username = etUsername.getText().toString();
-        String password = etPassword.getText().toString();
-
-        if (TextUtils.isEmpty(username)) {
+        if (TextUtils.isEmpty((etUsername.getText().toString()))) {
             etUsername.setError(REQUIRE);
             return false;
         }
-        if (TextUtils.isEmpty(password)) {
+
+        if (TextUtils.isEmpty((etPassword.getText().toString()))) {
             etPassword.setError(REQUIRE);
-            return false;
-        }
-        if (!username.equals(VALID_USERNAME)) {
-            etUsername.setError("Invalid username");
-            return false;
-        }
-        if (!password.equals(VALID_PASSWORD)) {
-            etPassword.setError("Invalid password");
             return false;
         }
         return true;
     }
-    private void signIn(){
-        if(!checkInput()){
+    private void signIn() {
+        if (!checkInput()) {
             return;
         }
-        Toast.makeText(this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    @Override
-    public void onClick(View view) {
-        if(view.getId() == R.id.btnSignIn){
-            signIn();
+        if (etUsername.getText().toString().trim().equals(usname) && etPassword.getText().toString().trim().equals(password)) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            etPassword.setError("Username or password wrong");
         }
+
     }
 }
